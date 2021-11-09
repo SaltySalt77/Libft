@@ -1,11 +1,14 @@
 #include<ctype.h>
 #include<stdio.h>
+#include<string.h>
+#include<stddef.h>
 
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isalnum(int c);
 int ft_isascii(int c);
 int ft_isprint(int c);
+size_t ft_strlen(char *s);
 
 int main(void)
 {
@@ -25,5 +28,8 @@ int main(void)
     
     printf("isprint    : A %d | a %d | 0 %d \n", isprint(arr[0]), isprint(arr[1]), isprint(arr[2]));
     printf("ft_isprint : A %d | a %d | 0 %d \n", ft_isprint(arr[0]), ft_isprint(arr[1]), ft_isprint(arr[2]));
+    
+    printf("strlen     : strlen(arr)    %ld \n", strlen(arr));
+    printf("ft_strlen  : ft_strlen(arr) %ld \n", ft_strlen(arr));
     return (0);
 }
