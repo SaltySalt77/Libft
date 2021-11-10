@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:14:14 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/10 18:38:05 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/10 19:02:35 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	*ft_memmove(void	*dest, const void	*src, size_t	n)
 {
 	unsigned char	*tmpdest;
 	unsigned char	*tmpsrc;
-	size_t	pos;
-	
-	tmpdest = (unsigned char	*)dest;
-	tmpsrc = (unsigned char	*)src;
+	size_t			pos;
+
+	tmpdest = (unsigned char *) dest;
+	tmpsrc = (unsigned char *) src;
 	if ((dest == NULL) && (src == NULL))
 		return (NULL);
 	if (dest < src)
