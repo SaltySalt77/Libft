@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:36:29 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/09 18:43:24 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/10 16:22:23 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void	*s, size_t	n)
+void	ft_bzero(void	*s, size_t	n)
 {
-	unsigned char	*temp;
+	unsigned char	*tmp;
 	size_t		pos;
 
-	temp = (unsigned char *)s;
+	tmp = (unsigned char *)s;
 	pos = 0;
 	while (pos < n)
-	{
-		temp[pos] = 0;
-		pos++;
-	}
+		tmp[pos++] = 0;
 }

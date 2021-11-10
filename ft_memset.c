@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:31:18 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/09 18:08:30 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/10 16:31:01 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	pos;
+	unsigned char	*tmp;
+	size_t		pos;
 
+	tmp = (unsigned char *)s;
 	pos = 0;
 	while (pos < n)
-	{
-		*((char *)s + pos) = c;
-		pos++;
-	}
+		tmp[pos++] = c;
 	return (s);
 }
