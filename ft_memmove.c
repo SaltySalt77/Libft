@@ -6,23 +6,17 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:14:14 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/10 19:02:35 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/10 19:22:02 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void	*dest, const void	*src, size_t	n)
+static void	copy(unsigned char	*tmpdest, unsigned char	*tmpsrc, size_t	n)
 {
-	unsigned char	*tmpdest;
-	unsigned char	*tmpsrc;
-	size_t			pos;
+	size_t	pos;
 
-	tmpdest = (unsigned char *) dest;
-	tmpsrc = (unsigned char *) src;
-	if ((dest == NULL) && (src == NULL))
-		return (NULL);
-	if (dest < src)
+	if (tmpdest < tmpsrc)
 	{
 		pos = 0;
 		while (pos < n)
@@ -40,5 +34,15 @@ void	*ft_memmove(void	*dest, const void	*src, size_t	n)
 			pos--;
 		}
 	}
+}
+
+void	*ft_memmove(void	*dest, const void	*src, size_t	n)
+{
+	unsigned char	*tmpdest;
+	unsigned char	*tmpsrc;
+
+	tmpdest = (unsigned char *) dest;
+	tmpsrc = (unsigned char *) src;
+	copy(tmpdest, tmpsrc, n);
 	return (dest);
 }
