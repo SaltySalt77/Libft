@@ -57,5 +57,25 @@ int main(void)
 	printf("bzero      : %s \n", testmemset);
 	printf("ft_bzero   : %s \n", ft_testmemset);
 	printf("\n");
+	
+	memcpy(testmemset, arr, 4);
+	ft_memcpy(ft_testmemset, arr, 4);
+	
+	printf("memcpy     : %s \n", testmemset);
+	printf("ft_memcpy  : %s \n", ft_testmemset);
+	printf("\n");
+	
+	memmove(testmemset + 3, testmemset, 4);
+	ft_memmove(ft_testmemset + 3, ft_testmemset, 4);
+
+	printf("memmove    : %s \n", testmemset);
+	printf("ft_memmove : %s \n", ft_testmemset);
+	printf("\n");
+
+	memmove(testmemset, testmemset + 1, 4);
+	ft_memmove(ft_testmemset, ft_testmemset + 1, 4);
+
+	printf("memmove    : %s \n", testmemset);
+	printf("ft_memmove : %s \n", ft_testmemset);
 	return (0);
 }
