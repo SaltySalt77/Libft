@@ -4,57 +4,22 @@
 #include <stddef.h>
 #include "libft.h"
 
-void	test_ft_strlcat(void)
+void	teststrlcpy(void)
 {
-	char    dest1[20] = "test";
-	char    dest2[20] = "test";
-	char    dest3[20] = "test";
-	char    dest4[20] = "test";
-	char    dest5[20] = "";
-	char    dest6[20] = "";
-	char    dest7[20] = "test";
-	char    src1[20] = "done!!";
-	char    src2[20] = "";
+	char	dest1[20];
+	char	dest2[20];
+	char	dest3[20];
 
-	char    fdest1[20] = "test";
-	char    fdest2[20] = "test";
-	char    fdest3[20] = "test";
-	char    fdest4[20] = "test";
-	char    fdest5[20] = "";
-	char    fdest6[20] = "";
-	char    fdest7[20] = "test";
+	char	src[9] = "testdone";
 
-	int     n;
+	size_t n;
 
-	n = strlcat(dest1, src1, 10);
-	printf("%s %d | ", dest1, n);
-	n = strlcat(dest2, src1, 8);
-	printf("%s %d | ", dest2, n);
-	n = strlcat(dest3, src1, 3);
-	printf("%s %d | ", dest3, n);
-	n = strlcat(dest4, src2, 10);
-	printf("%s %d | ", dest4, n);
-	n = strlcat(dest5, src1, 8);
-	printf("%s %d | ", dest5, n);
-	n = strlcat(dest6, src2, 3);
-	printf("%s %d | ", dest6, n);
-	n = strlcat(dest7, src1, 0);
-	printf("%s %d \n", dest7, n);
-
-	n = ft_strlcat(fdest1, src1, 10);
-	printf("%s %d | ", fdest1, n);
-	n = ft_strlcat(fdest2, src1, 8);
-	printf("%s %d | ", fdest2, n);
-	n = ft_strlcat(fdest3, src1, 3);
-	printf("%s %d | ", fdest3, n);
-	n = ft_strlcat(fdest4, src2, 10);
-	printf("%s %d | ", fdest4, n);
-	n = ft_strlcat(fdest5, src1, 8);
-	printf("%s %d | ", fdest5, n);
-	n = ft_strlcat(fdest6, src2, 3);
-	printf("%s %d | ", fdest6, n);
-	n = ft_strlcat(fdest7, src1, 0);
-	printf("%s %d \n", fdest7, n);
+	n = ft_strlcpy(dest1, src, 9);
+	printf("%s %ld | ", dest1, n);
+	n = ft_strlcpy(dest2, src, 4);
+	printf("%s %ld | ", dest2, n);
+	n = ft_strlcpy(dest3, src, 0);
+	printf("%s %ld \n", dest3, n);
 }
 
 int main(void)
@@ -129,8 +94,9 @@ int main(void)
 
 	printf("memmove    : %s \n", testmemset);
 	printf("ft_memmove : %s \n", ft_testmemset);
+	printf("\n");
 
-	test_ft_strlcat();
+	teststrlcpy();
 	printf("\n");
 	return (0);
 }
