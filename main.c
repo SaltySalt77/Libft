@@ -135,6 +135,29 @@ void	teststrrchr(void)
 	printf("\n");
 }
 
+void	teststrncmp(void)
+{
+	char	s1[] = "testdone";
+	char	s2[] = "testing!";
+
+	printf("strncmp          : %s, %s %d \n", s1, s2, strncmp(s1, s2, 8));
+	printf("ft_strncmp       : %s, %s %d \n", s1, s2, ft_strncmp(s1, s2, 8));
+	printf("\n");
+
+	printf("strncmp          : %s, %s %d \n", s1, s2, strncmp(s1, s2, 4));
+	printf("ft_strncmp       : %s, %s %d \n", s1, s2, ft_strncmp(s1, s2, 4));
+	printf("\n");
+
+	printf("strncmp          : %s,    %d \n", s1, strncmp(s1, "", 8));
+	printf("ft_strncmp       : %s,    %d \n", s1, ft_strncmp(s1, "", 8));
+	printf("\n");
+
+	printf("strncmp          :        %d \n", strncmp("", "", 8));
+	printf("ft_strncmp       :        %d \n", ft_strncmp("", "", 8));
+	printf("\n");
+} 
+
+
 int main(void)
 {
 	char	arr[4] = "Aa0" ;
@@ -216,7 +239,7 @@ int main(void)
 	printf("\n");
 	
 	teststrchr();
-	
 	teststrrchr();
+	teststrncmp();
 	return (0);
 }

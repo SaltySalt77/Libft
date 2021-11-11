@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:10:43 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/11 22:24:15 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/12 00:22:59 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+int		ft_strncmp(const char	*s1, const char 	*s2, size_t	n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
