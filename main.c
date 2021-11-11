@@ -52,6 +52,89 @@ void	testtolowerupper(void)
 	printf("src1 ft_toupper  : %s\n", ft_src2);
 }
 
+void	teststrchr(void)
+{
+	char	str1[] = "find Z";
+	char	str2[] = "don't have c";
+	char	str3[20] = "";
+	char	*ptr;
+	char	*ft_ptr;
+
+	ptr = strchr(str1, 'Z');
+	ft_ptr = ft_strchr(str1, 'Z');
+	printf("strchr           : %s, %c \n", str1, *ptr);
+	printf("ft_strchr        : %s, %c \n", str1, *ft_ptr);
+	printf("\n");
+
+	ptr = strchr(str2, 'Z');
+	ft_ptr = ft_strchr(str2, 'Z');
+	if (ptr)
+		printf("strchr           : %s, %c \n", str2, *ptr);
+	if (ft_ptr)
+		printf("ft_strchr        : %s, %c \n", str2, *ft_ptr);
+	printf("\n");
+
+	ptr = strchr(str3, 'Z');
+	ft_ptr = ft_strchr(str3, 'Z');
+	if (ptr)
+		printf("strchr           : %s, %c \n", str3, *ptr);
+	if (ft_ptr)	
+		printf("ft_strchr        : %s, %c \n", str3, *ft_ptr);
+	printf("\n");
+}
+
+void	teststrrchr(void)
+{
+	char	str1[] = "Zfind_last Z";
+	char	ft_str1[] = "Zfind_last Z";
+	char	str2[] = "don't have c";
+	char	str3[20] = "";
+	char	*ptr;
+	char	*ft_ptr;
+
+	ptr = strrchr(str1, 'Z');
+	ft_ptr = ft_strrchr(ft_str1, 'Z');
+	printf("strrchr          : %s, %c", str1, *ptr);
+	*ptr = 48;
+	printf(" %s\n", str1);	
+	printf("ft_strrchr       : %s, %c", ft_str1, *ft_ptr);
+	*ft_ptr = 48;
+	printf(" %s\n", ft_str1);	
+	printf("\n");
+
+	ptr = strrchr(str2, 'Z');
+	ft_ptr = ft_strrchr(str2, 'Z');
+	if (ptr)
+	{
+		printf("strrchr          : %s, %c", str2, *ptr);
+		*ptr = 48;
+		printf(" %s\n", str2);	
+	}
+	if (ft_ptr)
+	{
+		printf("ft_strrchr       : %s, %c \n", str2, *ft_ptr);
+		*ft_ptr = 48;
+		printf(" %s\n", str2);	
+	}
+	printf("\n");
+
+	ptr = strrchr(str3, 'Z');
+	ft_ptr = ft_strrchr(str3, 'Z');
+	if (ptr)
+	{
+		printf("strrchr          : %s, %c", str3, *ptr);
+		*ptr = 48;
+		printf(" %s\n", str3);	
+	}
+	if (ft_ptr)
+	{
+		printf("ft_strrchr       : %s, %c \n", str3, *ft_ptr);
+		*ft_ptr = 48;
+		printf(" %s\n", str3);	
+	}
+	printf("\n");
+}
+
 int main(void)
 {
 	char	arr[4] = "Aa0" ;
@@ -131,5 +214,9 @@ int main(void)
 	
 	testtolowerupper();
 	printf("\n");
+	
+	teststrchr();
+	
+	teststrrchr();
 	return (0);
 }
