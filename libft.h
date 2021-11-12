@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:10:43 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/12 14:25:16 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/12 14:47:12 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include<string.h>
+# include<stdlib.h>
 
 size_t	ft_strlen(const char	*s);
 size_t	ft_strlcat(char	*dst, const char	*src, size_t	size);

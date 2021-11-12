@@ -257,6 +257,25 @@ void	teststrnstr(void)
 	printf("\n");
 }
 
+void	testatoi(void)
+{
+	printf("atoi             : -2147483648, %d \n", atoi(" -2147483648"));
+	printf("ft_atoi          : -2147483648, %d \n", atoi(" -2147483648"));
+	printf("\n");
+
+	printf("atoi             : 2147483647, %d \n", atoi(" 2147483647"));
+	printf("ft_atoi          : 2147483647, %d \n", atoi(" 2147483647"));
+	printf("\n");
+
+	printf("atoi             : \\n\\t, %d \n", atoi(" \n\t"));
+	printf("ft_atoi          : \\n\\t, %d \n", atoi(" \n\t"));
+	printf("\n");
+
+	printf("atoi             : \\n\\t++, %d \n", atoi(" \n\t"));
+	printf("ft_atoi          : \\n\\t++, %d \n", atoi(" \n\t"));
+	printf("\n");
+}
+
 int main(void)
 {
 	char	arr[4] = "Aa0" ;
@@ -343,5 +362,6 @@ int main(void)
 	testmemchr();
 	testmemcmp();
 	teststrnstr();
+	testatoi();
 	return (0);
 }
