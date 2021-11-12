@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 22:24:28 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/12 13:07:23 by hyna             ###   ########.fr       */
+/*   Created: 2021/11/12 13:09:21 by hyna              #+#    #+#             */
+/*   Updated: 2021/11/12 13:30:30 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void	*s1, const void	*s2, size_t	n)
 {
-	int	pos;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
+	size_t			pos;
 
-	pos = ft_strlen(s) - 1;
-	while ((pos >= 0) && (s[pos] != c))
-		pos--;
-	if (s[pos] == c)
-		return ((char *) &s[pos]);
-	return (NULL);
+	tmp1 = (unsigned char *) s1;
+	tmp2 = (unsigned char *) s2;
+	pos = 0;
+	while ((tmp1[pos]) && (pos < n))
+	{
+		if (tmp1[pos] != tmp2[pos])
+			return (tmp1[pos] - tmp2[pos]);
+		pos++;
+	}
+	return (0);
 }

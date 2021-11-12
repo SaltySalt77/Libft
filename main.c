@@ -157,6 +157,105 @@ void	teststrncmp(void)
 	printf("\n");
 } 
 
+void	testmemchr(void)
+{
+	char	str1[] = "find Z";
+	char	str2[] = "don't have c";
+	char	str3[20] = "";
+	char	*ptr;
+	char	*ft_ptr;
+
+	ptr = memchr(str1, 'Z', strlen(str1));
+	ft_ptr = ft_memchr(str1, 'Z', strlen(str1));
+	printf("memchr           : %s, %c \n", str1, *ptr);
+	printf("ft_memchr        : %s, %c \n", str1, *ft_ptr);
+	printf("\n");
+
+	ptr = memchr(str1, 'Z', 5);
+	ft_ptr = ft_memchr(str1, 'Z', 5);
+	if (ptr)
+		printf("strchr           : %s, %c \n", str1, *ptr);
+	if (ft_ptr)
+		printf("ft_memchr        : %s, %c \n", str1, *ft_ptr);
+	printf("\n");
+
+	ptr = memchr(str1, 'Z', 0);
+	ft_ptr = ft_memchr(str1, 'Z', 0);
+	if (ptr)
+		printf("strchr           : %s, %c \n", str1, *ptr);
+	if (ft_ptr)
+		printf("ft_memchr        : %s, %c \n", str1, *ft_ptr);
+	printf("\n");
+
+	ptr = memchr(str2, 'Z', strlen(str2));
+	ft_ptr = ft_memchr(str2, 'Z', strlen(str2));
+	if (ptr)
+		printf("strchr           : %s, %c \n", str2, *ptr);
+	if (ft_ptr)
+		printf("ft_memchr        : %s, %c \n", str2, *ft_ptr);
+	printf("\n");
+
+	ptr = memchr(str3, 'Z', strlen(str3));
+	ft_ptr = ft_memchr(str3, 'Z', strlen(str3));
+	if (ptr)
+		printf("memchr           : %s, %c \n", str3, *ptr);
+	if (ft_ptr)	
+		printf("ft_memchr        : %s, %c \n", str3, *ft_ptr);
+	printf("\n");
+}
+
+void	testmemcmp(void)
+{
+	char	s1[] = "testdone";
+	char	s2[] = "testing!";
+
+	printf("memcmp           : %s, %s %d \n", s1, s2, memcmp(s1, s2, 8));
+	printf("ft_memcmp        : %s, %s %d \n", s1, s2, ft_memcmp(s1, s2, 8));
+	printf("\n");
+
+	printf("memcmp           : %s, %s %d \n", s1, s2, memcmp(s1, s2, 4));
+	printf("ft_memcmp        : %s, %s %d \n", s1, s2, ft_memcmp(s1, s2, 4));
+	printf("\n");
+
+	printf("memcmp           : %s,    %d \n", s1, memcmp(s1, "", 8));
+	printf("ft_memcmp        : %s,    %d \n", s1, ft_memcmp(s1, "", 8));
+	printf("\n");
+
+	printf("memcmp           :        %d \n", memcmp(s1, s2, 0));
+	printf("ft_memcmp        :        %d \n", ft_memcmp(s1, s2, 0));
+	printf("\n");
+
+	printf("memcmp           :        %d \n", memcmp("", "", 8));
+	printf("ft_memcmp        :        %d \n", ft_memcmp("", "", 8));
+	printf("\n");
+} 
+
+void	teststrnstr(void)
+{
+	char	to_find1[20] = "123";
+	char	to_find2[20] = "";
+
+	char	fstr1[20] = "test123";
+	char	fstr2[20] = "test12123";
+	char	fstr3[20] = "testtest";
+	char	fstr4[20] = "";
+	char	fstr5[20] = "test123";
+	char	fstr6[20] = "test12123";
+	char	fstr7[20] = "testtest";
+	char	fstr8[20] = "";
+	char	fstr9[20] = "test12123";
+
+	printf("%s | ", ft_strnstr(fstr1, to_find1, 10));
+	printf("%s | ", ft_strnstr(fstr2, to_find1, 10));
+	printf("%s | ", ft_strnstr(fstr3, to_find1, 10));
+	printf("%s | ", ft_strnstr(fstr4, to_find1, 10));
+	printf("%s | ", ft_strnstr(fstr5, to_find2, 10));
+	printf("%s | ", ft_strnstr(fstr6, to_find2, 10));
+	printf("%s | ", ft_strnstr(fstr7, to_find2, 10));
+	printf("%s | ", ft_strnstr(fstr8, to_find2, 10));
+	printf("%s \n", ft_strnstr(fstr9, to_find1, 0));
+	printf("\n");
+}
 
 int main(void)
 {
@@ -241,5 +340,8 @@ int main(void)
 	teststrchr();
 	teststrrchr();
 	teststrncmp();
+	testmemchr();
+	testmemcmp();
+	teststrnstr();
 	return (0);
 }

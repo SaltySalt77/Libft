@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 22:24:28 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/12 13:07:23 by hyna             ###   ########.fr       */
+/*   Created: 2021/11/12 11:35:19 by hyna              #+#    #+#             */
+/*   Updated: 2021/11/12 13:06:02 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void	*s, int c, size_t	n)
 {
-	int	pos;
+	unsigned char	*tmp;
+	size_t			pos;
 
-	pos = ft_strlen(s) - 1;
-	while ((pos >= 0) && (s[pos] != c))
-		pos--;
-	if (s[pos] == c)
-		return ((char *) &s[pos]);
+	tmp = (unsigned char *) s;
+	pos = 0;
+	while ((tmp[pos]) && (pos < n))
+	{
+		if (tmp[pos] == c)
+			return ((void *) &tmp[pos]);
+		pos++;
+	}
 	return (NULL);
 }

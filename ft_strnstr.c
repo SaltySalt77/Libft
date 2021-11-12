@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 22:24:28 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/12 13:07:23 by hyna             ###   ########.fr       */
+/*   Created: 2021/11/12 13:35:30 by hyna              #+#    #+#             */
+/*   Updated: 2021/11/12 14:12:06 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char	*big, const char	*little, size_t	len)
 {
-	int	pos;
+	char	*tmpbig;
+	char	*tmplittle;
+	size_t	i;
+	size_t	j;
 
-	pos = ft_strlen(s) - 1;
-	while ((pos >= 0) && (s[pos] != c))
-		pos--;
-	if (s[pos] == c)
-		return ((char *) &s[pos]);
-	return (NULL);
+	tmpbig = (char *) big;
+	tmplittle = (char *) little;
+	i = 0;
+	if (tmplittle[0] == 0)
+		return (tmpbig);
+	while ((tmpbig[i]) && (i < len))
+	{
+		j = 0;
+		while ((tmpbig[i + j]) && (tmpbig[i + j] == tmplittle[j]))
+		{
+			if (tmplittle[j + 1] == 0)
+				return (&tmpbig[i]);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
