@@ -32,8 +32,10 @@ SRCS_1 =	ft_isalpha.c	\
 			ft_atoi.c		\
 			ft_calloc.c		\
 			ft_strdup.c		\
+			ft_substr.c		\
 
 SRCS = $(SRCS_1)
+
 OJBS = $(SRCS:.c=.o)
 
 all : $(TARGET)
