@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:01:31 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/11 18:20:55 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/16 16:39:05 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ size_t	ft_strlcpy(char	*dst, const char	*src, size_t	size)
 		pos++;
 	}
 	dst[pos] = 0;
-	while (src[pos])
-		pos++;
-	return (pos);
+	return (ft_strlen(src));
 }

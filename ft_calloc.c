@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 22:24:28 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/16 16:40:33 by hyna             ###   ########.fr       */
+/*   Created: 2021/11/16 18:36:44 by hyna              #+#    #+#             */
+/*   Updated: 2021/11/16 18:39:50 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*calloc(size_t	count, size_t	size)
 {
-	int	pos;
 
-	pos = ft_strlen(s);
-	while ((pos >= 0) && (s[pos] != c))
-		pos--;
-	if (s[pos] == c)
-		return ((char *) &s[pos]);
-	return (NULL);
-}

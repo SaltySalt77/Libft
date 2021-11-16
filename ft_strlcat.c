@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 19:57:22 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/11 18:02:32 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/16 16:20:19 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ size_t	ft_strlcat(char	*dst, const char	*src, size_t	size)
 	size_t	j;
 	size_t	len;
 
-	i = 0;
+	i = ft_strlen(dst);
 	j = 0;
-	while (dst[i])
-		i++;
 	if (size <= i)
 		len = size;
 	else
@@ -29,7 +27,5 @@ size_t	ft_strlcat(char	*dst, const char	*src, size_t	size)
 	while (src[j] && (i + 1 < size))
 		dst[i++] = src[j++];
 	dst[i] = 0;
-	while (src[j])
-		j++;
-	return (len + j);
+	return (len + ft_strlen(src));
 }

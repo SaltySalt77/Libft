@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:12:35 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/12 00:25:00 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/16 17:02:43 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(const char	*s1, const char	*s2, size_t	n)
 	size_t	i;
 
 	i = 0;
-	if ((*s1 == 0) && (*s2 == 0))
+	if (n == 0)
 		return (0);
 	while (s1[i] && s2[i] && (i + 1 < n))
 	{

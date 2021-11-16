@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 13:35:30 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/12 14:12:06 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/16 17:01:05 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ char	*ft_strnstr(const char	*big, const char	*little, size_t	len)
 	while ((tmpbig[i]) && (i < len))
 	{
 		j = 0;
-		while ((tmpbig[i + j]) && (tmpbig[i + j] == tmplittle[j]))
+		while ((tmpbig[i + j]) && (tmpbig[i + j] == tmplittle[j])
+			&& (i + j < len))
 		{
 			if (tmplittle[j + 1] == 0)
 				return (&tmpbig[i]);
