@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 22:24:28 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/16 16:40:33 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/17 15:00:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	pos = ft_strlen(s);
 	while ((pos >= 0) && (s[pos] != c))
 		pos--;
-	if (s[pos] == c)
-		return ((char *) &s[pos]);
-	return (NULL);
+	if (pos == -1)
+		return (NULL);
+	return ((char *) &s[pos]);
 }

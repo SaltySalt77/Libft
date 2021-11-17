@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:14:45 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/17 13:45:04 by hyna             ###   ########.fr       */
+/*   Created: 2021/11/17 15:36:33 by hyna              #+#    #+#             */
+/*   Updated: 2021/11/17 16:44:20 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const	*s, unsigned int start, size_t	len)
+char	*ft_strtrim(char const	*s1, char const	*set)
 {
-	size_t	pos;
 	char	*tmp;
+	size_t	i;
+	size_t	j;
+	size_t	len;
 
-	pos = 0;
-	tmp = (char *) malloc(len + 1);
+	i = 0;
+	j = 0;
+	len = 0;
+	while (i < ft_strlen(s1))
+	{
+		if (!(ft_strchr(set, s1[i])))
+			len++;
+		i++;
+	}
+	tmp = (char *) ft_calloc(len + 1, len + 1);
 	if (tmp == NULL)
 		return (NULL);
-	if (ft_strlen(s) < start + 1)
+	i = 0;
+	while (j < len)
 	{
-		tmp[0] = 0;
-		return (tmp);
+		if (!(ft_strchr(set, s1[i])))
+			tmp[j++] = s1[i];
+		i++;
 	}
-	while ((pos < len) && s[start])
-	{
-		tmp[pos] = s[start];
-		pos++;
-		start++;
-	}
-	tmp[pos] = 0;
 	return (tmp);
 }
