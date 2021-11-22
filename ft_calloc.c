@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:36:44 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/16 19:03:02 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/22 11:21:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	*ft_calloc(size_t	count, size_t	size)
 	result = (unsigned char *) malloc(count * size);
 	if (result == NULL)
 		return (NULL);
-	while (pos < count)
-		result[pos++] = 0;
+	ft_bzero(result, count);
 	return (result);
 }
