@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 17:10:43 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/22 16:48:20 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/23 16:29:48 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include<string.h>
 # include<stdlib.h>
+# include<unistd.h>
 
 size_t	ft_strlen(const char	*s);
 size_t	ft_strlcat(char	*dst, const char	*src, size_t	size);
@@ -35,6 +36,11 @@ void	*ft_memchr(const void	*s, int c, size_t	n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void	*dest, const void	*src, size_t	n);
 void	*ft_memmove(void	*dest, const void	*src, size_t	n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char	*s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char	*s, int fd);
+void	ft_striteri(char	*s, void (*f) (unsigned int, char *));
 int		ft_atoi(const char	*nptr);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

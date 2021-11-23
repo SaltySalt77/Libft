@@ -1,39 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:14:45 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/23 10:29:26 by hyna             ###   ########.fr       */
+/*   Created: 2021/11/23 16:23:12 by hyna              #+#    #+#             */
+/*   Updated: 2021/11/23 16:32:26 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const	*s, unsigned int start, size_t	len)
+static void	print_num(int n, int fd)
 {
-	size_t	pos;
-	char	*tmp;
+	char	c;
 
-	pos = 0;
-	if (!s)
-		return (NULL);
-	tmp = (char *) malloc(len + 1);
-	if (tmp == NULL)
-		return (NULL);
-	if (ft_strlen(s) < start + 1)
+	if (n < 10)
 	{
-		tmp[0] = 0;
-		return (tmp);
+		c = n + 48;
+		write(fd, &c, 1);
 	}
-	while ((pos < len) && s[start])
+	else
 	{
-		tmp[pos] = s[start];
-		pos++;
-		start++;
+		print_num(n / 10, fd);
+		print_num(n % 10, fd);
 	}
-	tmp[pos] = 0;
-	return (tmp);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (fd < 0)
+		return ;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+	}
+	else if (n == 0)
+		write(fd, "0", 1);
+	else
+	{
+		if (n < 0)
+		{
+			n = -n;
+			write(fd, "-", 1);
+		}
+		print_num(n, fd);
+	}
 }

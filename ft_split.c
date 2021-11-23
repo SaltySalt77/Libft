@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 11:14:09 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/22 14:37:09 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/23 14:30:25 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ static int	word_count(char const	*s, char c)
 	int	i;
 
 	i = 0;
-	count = 1;
+	count = 0;
+	while (s[i] && (s[i] == c))
+		i++;
 	while (s[i])
 	{
 		while (s[i] && (s[i] != c))
 			i++;
-		if (s[i] && (s[i] == c))
-			count++;
+		count++;
 		while (s[i] && (s[i] == c))
 			i++;
 	}
@@ -52,41 +53,19 @@ char	**ft_split(char const	*s, char c)
 
 	j = 0;
 	k = 0;
-	if ((s == NULL) || (c == 0))
-		return ((char **) ft_calloc(1, sizeof(char)));
+	if ((!s) || (!c))
+		return (NULL);
 	count = word_count(s, c);
-	result = (char **) ft_calloc(count + 1, sizeof(char));
+	result = (char **) malloc((count + 1) * sizeof(char *));
 	if (!(result))
 		return (NULL);
 	while (k < count)
 	{
 		result[k] = word_split(s, c, &j);
-		if (!(result[k]))
+		if (!result[k])
 			return (NULL);
 		k++;
 	}
+	result[k] = NULL;
 	return (result);
 }
-/*
-#include<stdio.h>
-
-int	main()
-{
-	char	str[] = "why i don't know";
-	char	**strstr;
-	int		i;
-
-	i = 0;
-	strstr = ft_split(str, 32);
-	while (strstr[i])
-	{
-		printf("%s\n", strstr[i]);
-		i++;
-	}
-	while (i >= 0)
-	{
-		free(strstr[i]);
-		i--;
-	}
-	return (0);
-}*/

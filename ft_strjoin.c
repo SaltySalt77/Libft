@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 10:19:24 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/22 17:50:08 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/23 10:34:27 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const	*s1, char const *s2)
 	size_t	s2len;
 	size_t	pos;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
 	len = s1len + s2len;
