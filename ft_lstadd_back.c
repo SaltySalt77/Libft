@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 13:53:21 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/24 15:54:26 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/24 16:02:06 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void	ft_lstadd_back(t_list	**lst, t_list	*new)
 
 	if (!lst || !new)
 		return ;
-	tmp = *lst;
-	tmp->next = new;
+	if (*lst)
+	{
+		tmp = *lst;
+		tmp->next = new;
+	}
 	*lst = new;
 }
