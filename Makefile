@@ -44,24 +44,35 @@ SRCS	 =	ft_isalpha.c	\
 			ft_putendl_fd.c	\
 			ft_putnbr_fd.c	\
 
+SRCS_BONUS = ft_lstnew.c		\
+			 ft_lstadd_front.c 	\
+			 ft_lstsize.c		\
+
 OJBS = $(SRCS:.c=.o)
 
+OJBS_BONUS = $(SRCS_BONUS:.c=.o)
+
 all : $(TARGET)
+
+bonus : $(TARGET) $(OJBS_BONUS)
+	$(AR) ru $(TARGET) $(OJBS_BONUS)
 
 $(TARGET) : $(OJBS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(OJBS) : ./libft.h
 
+$(OJBS_BONUS) : ./libft.h
+
 %.o : %.c
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(RMFLAGS) $(OJBS)
+	$(RM) $(RMFLAGS) $(OJBS) $(OJBS_BONUS)
 
 fclean : clean
 	$(RM) $(RMFLAGS) $(TARGET)
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
