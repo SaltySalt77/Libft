@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:38:44 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/22 15:59:07 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/26 10:32:30 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,21 +78,3 @@ char	*ft_itoa(int n)
 	make_result(n, result, result_len(n) - 1);
 	return (result);
 }
-/*
-#include<stdio.h>
-
-int main()
-{
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(9));
-	printf("%s\n", ft_itoa(-9));
-	printf("%s\n", ft_itoa(10));
-	printf("%s\n", ft_itoa(-10));
-	printf("%s\n", ft_itoa(8124));
-	printf("%s\n", ft_itoa(-9874));
-	printf("%s\n", ft_itoa(543000));
-	printf("%s\n", ft_itoa(-2147483648LL));
-	printf("%s\n", ft_itoa(2147483647));
-
-	return (0);
-}*/

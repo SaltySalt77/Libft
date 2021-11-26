@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   lstiter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 15:35:40 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/26 10:29:42 by hyna             ###   ########.fr       */
+/*   Created: 2021/11/26 11:49:05 by hyna              #+#    #+#             */
+/*   Updated: 2021/11/26 13:47:32 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_lstiter(t_list	*lst, void	(*f)(void *))
 {
-	if ((c >= '0') && (c <= '9'))
-		return (1);
-	return (0);
+	t_list	*tmp;
+
+	if (!lst || !f)
+		return ;
+	tmp = lst;
+	while (tmp)
+	{
+		f(tmp->content);
+		tmp = tmp->next;
+	}
 }
