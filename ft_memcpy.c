@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:55:07 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/10 19:00:57 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/26 15:24:07 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void	*dest, const void	*src, size_t	n)
 	unsigned char	*tmp;
 	size_t			pos;
 
+	if (!dest && !src)
+		return (NULL);
 	tmp = (unsigned char *) dest;
 	pos = 0;
 	while (pos < n)

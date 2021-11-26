@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 13:09:21 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/16 15:02:56 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/26 15:28:46 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void	*s1, const void	*s2, size_t	n)
 	pos = 0;
 	if (n == 0)
 		return (0);
-	while ((tmp1[pos]) && (pos + 1 < n))
+	while (pos + 1 < n)
 	{
 		if (tmp1[pos] != tmp2[pos])
 			break ;

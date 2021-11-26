@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:25:26 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/26 15:08:13 by hyna             ###   ########.fr       */
+/*   Updated: 2021/11/26 15:41:08 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_atoi(const char *nptr)
 	char	*str;
 	int		np;
 	int		n;
-	int		result;
+	long	result;
 
 	str = (char *)nptr;
 	np = 1;
@@ -45,5 +45,5 @@ int	ft_atoi(const char *nptr)
 		str++;
 	}
 	result = result * np;
-	return (result);
+	return ((int)result);
 }
