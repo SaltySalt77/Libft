@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:32:38 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/24 12:32:21 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/02 19:19:30 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void	*content)
 {
-	t_list	*s_result;
+	t_list	*result;
 
-	s_result = malloc(sizeof(t_list));
-	if (!s_result)
+	result = malloc(sizeof(t_list));
+	if (!result)
 		return (NULL);
-	s_result->content = content;
-	s_result->next = NULL;
-	return (s_result);
+	result->content = content;
+	result->next = NULL;
+	return (result);
 }

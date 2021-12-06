@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:38:44 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/26 10:32:30 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/02 18:53:05 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ static void	ft_rev(char	*tab, int size)
 {
 	char	temp;
 	int		i;
-	int		pos;
+	int		j;
 
 	i = size - 1;
-	pos = 0;
-	while (pos < size / 2)
+	j = 0;
+	while (j < size / 2)
 	{
-		temp = tab[pos];
-		tab[pos] = tab[i];
+		temp = tab[j];
+		tab[j] = tab[i];
 		tab[i] = temp;
 		i--;
-		pos++;
+		j++;
 	}
 }
 

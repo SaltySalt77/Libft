@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:58:33 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/26 16:00:09 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/02 19:17:04 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list	*lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	t_list	*tmp;
 
-	if (!lst || !f)
+	if (!lst || !f || del)
 		return (NULL);
 	head = ft_lstnew(f(lst->content));
 	if (!head)

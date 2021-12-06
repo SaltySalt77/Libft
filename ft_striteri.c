@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:41:14 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/23 15:05:23 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/02 20:56:49 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ void	ft_striteri(char	*s, void (*f)(unsigned int, char *))
 	int	i;
 
 	i = -1;
-	if (!s)
+	if (!s || !f)
 		return ;
 	while (s[++i])
 		f(i, &s[i]);

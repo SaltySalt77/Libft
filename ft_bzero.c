@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:36:29 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/10 16:40:14 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/02 18:30:32 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	ft_bzero(void	*s, size_t	n)
 {
 	unsigned char	*tmp;
-	size_t			pos;
+	size_t			i;
 
 	tmp = (unsigned char *)s;
-	pos = 0;
-	while (pos < n)
-		tmp[pos++] = 0;
+	i = 0;
+	while (i < n)
+		tmp[i++] = 0;
 }
