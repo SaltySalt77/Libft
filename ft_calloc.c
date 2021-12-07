@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:36:44 by hyna              #+#    #+#             */
-/*   Updated: 2021/11/26 15:43:36 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/07 11:38:32 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t	count, size_t	size)
 {
 	unsigned char	*result;
 
+	if (!count || !size)
+		return (NULL);
 	result = (unsigned char *) malloc(count * size);
 	if (result == NULL)
 		return (NULL);
