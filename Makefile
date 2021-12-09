@@ -54,27 +54,27 @@ SRCS_BONUS = ft_lstnew.c		\
 			 ft_lstiter.c		\
 			 ft_lstmap.c		\
 
-OJBS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
-OJBS_BONUS = $(SRCS_BONUS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all : $(TARGET)
 
-bonus : $(TARGET) $(OJBS_BONUS)
-	$(AR) ru $(TARGET) $(OJBS_BONUS)
+bonus : $(TARGET) $(OBJS_BONUS)
+	$(AR) ru $(TARGET) $(OBJS_BONUS)
 
-$(TARGET) : $(OJBS)
+$(TARGET) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-$(OJBS) : ./libft.h
+$(OBJS) : ./libft.h
 
-$(OJBS_BONUS) : ./libft.h
+$(OBJS_BONUS) : ./libft.h
 
 %.o : %.c
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(RMFLAGS) $(OJBS) $(OJBS_BONUS)
+	$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
 
 fclean : clean
 	$(RM) $(RMFLAGS) $(TARGET)

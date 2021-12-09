@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 11:14:09 by hyna              #+#    #+#             */
-/*   Updated: 2021/12/02 20:54:32 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/09 15:13:45 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**ft_split(char const	*s, char c)
 
 	j = 0;
 	k = 0;
-	if ((!s) || (!c))
+	if (!s)
 		return (NULL);
 	count = word_count(s, c);
 	result = (char **) malloc((count + 1) * sizeof(char *));

@@ -6,7 +6,7 @@
 /*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 22:00:23 by hyna              #+#    #+#             */
-/*   Updated: 2021/12/07 12:17:14 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/09 15:18:05 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 char	*ft_strchr(const char	*s, int c)
 {
-	while ((*s) && (*s != c))
+	char	tmp;
+
+	tmp = (char) c;
+	while ((*s) && (*s != tmp))
 		s++;
-	if (*s == c)
+	if (*s == tmp)
 		return ((char *) s);
 	return (NULL);
 }
