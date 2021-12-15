@@ -62,6 +62,7 @@ all : $(TARGET)
 
 bonus : $(TARGET) $(OBJS_BONUS)
 	$(AR) ru $(TARGET) $(OBJS_BONUS)
+	touch bonus
 
 $(TARGET) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
@@ -81,4 +82,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
