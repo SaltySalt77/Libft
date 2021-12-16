@@ -6,11 +6,21 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 19:14:45 by hyna              #+#    #+#             */
-/*   Updated: 2021/12/09 16:07:38 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/16 22:49:56 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	ft_newlen(char const	*s, size_t	len)
+{
+	size_t	s_len;
+
+	s_len = ft_strlen(s);
+	if (s_len > len)
+		return (len);
+	return (s_len);
+}
 
 char	*ft_substr(char const	*s, unsigned int start, size_t	len)
 {
@@ -20,20 +30,17 @@ char	*ft_substr(char const	*s, unsigned int start, size_t	len)
 	pos = 0;
 	if (!s)
 		return (NULL);
-	tmp = (char *) malloc(len + 1);
+	len = ft_newlen(&s[start], len);
+	tmp = (char *) ft_calloc(len + 1);
 	if (!tmp)
 		return (NULL);
 	if (ft_strlen(s) < start)
-	{
-		tmp[0] = 0;
 		return (tmp);
-	}
 	while ((pos < len) && s[start])
 	{
 		tmp[pos] = s[start];
 		pos++;
 		start++;
 	}
-	tmp[pos] = 0;
 	return (tmp);
 }
