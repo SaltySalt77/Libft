@@ -60,8 +60,8 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 all : $(NAME)
 
-bonus : $(OBJS) $(OBJS_BONUS)
-	$(AR) $(ARFLAGS) $@ $^
+bonus : $(NAME) $(OBJS_BONUS)
+	$(AR) ru $@ $(OBJS_BONUS)
 
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
@@ -81,4 +81,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
