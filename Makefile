@@ -1,4 +1,4 @@
-TARGET = libft.a
+NAME = libft.a
 
 CC = gcc
 CCFLAGS = -Wall -Werror -Wextra
@@ -58,13 +58,12 @@ OBJS = $(SRCS:.c=.o)
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-all : $(TARGET)
+all : $(NAME)
 
-bonus : $(TARGET) $(OBJS_BONUS)
-	$(AR) ru $(TARGET) $(OBJS_BONUS)
-	touch bonus
+bonus : $(OBJS) $(OBJS_BONUS)
+	$(AR) $(ARFLAGS) $@ $^
 
-$(TARGET) : $(OBJS)
+$(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(OBJS) : ./libft.h
@@ -78,7 +77,7 @@ clean :
 	$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
 
 fclean : clean
-	$(RM) $(RMFLAGS) $(TARGET)
+	$(RM) $(RMFLAGS) $(NAME)
 
 re : fclean all
 

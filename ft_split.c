@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 11:14:09 by hyna              #+#    #+#             */
-/*   Updated: 2021/12/09 15:13:45 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/16 22:23:23 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,19 @@ static char	*word_split(char const	*s, char c, int *j)
 	return (ft_substr(s, i, (*j) - i));
 }
 
+static void	free_everything(char	**result)
+{
+	int	i;
+
+	i = 0;
+	while (result[i])
+	{
+		free(result[i]);
+		i++;
+	}
+	free(result);
+}
+
 char	**ft_split(char const	*s, char c)
 {
 	char	**result;
@@ -63,7 +76,10 @@ char	**ft_split(char const	*s, char c)
 	{
 		result[k] = word_split(s, c, &j);
 		if (!result[k])
+		{
+			free_everything(result);
 			return (NULL);
+		}
 		k++;
 	}
 	result[k] = NULL;
