@@ -6,7 +6,7 @@
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 19:14:45 by hyna              #+#    #+#             */
-/*   Updated: 2021/12/16 22:49:56 by hyna             ###   ########.fr       */
+/*   Updated: 2021/12/16 22:53:22 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const	*s, unsigned int start, size_t	len)
 	if (!s)
 		return (NULL);
 	len = ft_newlen(&s[start], len);
-	tmp = (char *) ft_calloc(len + 1);
+	tmp = (char *) ft_calloc((len + 1), sizeof(char));
 	if (!tmp)
 		return (NULL);
 	if (ft_strlen(s) < start)
