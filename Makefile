@@ -4,7 +4,7 @@ CC = gcc
 CCFLAGS = -Wall -Werror -Wextra
 
 AR = ar
-ARFLAGS = rcs
+ARFLAGS = rcus
 
 RM = rm
 RMFLAGS = -rf
@@ -61,7 +61,7 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 all : $(NAME)
 
 bonus : $(OBJS) $(OBJS_BONUS)
-	$(AR) $(ARFLAGS) $@ $^
+	$(AR) $(ARFLAGS) $(NAME) $^
 
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
