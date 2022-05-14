@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyna <hyns@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 01:36:19 by hyna              #+#    #+#             */
-/*   Updated: 2022/03/24 02:04:10 by hyna             ###   ########.fr       */
+/*   Created: 2022/05/14 18:17:22 by hyna              #+#    #+#             */
+/*   Updated: 2022/05/14 18:17:29 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 static char	*mv_backup(char	*backup, int	*check)
 {
