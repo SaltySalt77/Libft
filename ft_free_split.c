@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyna <hyna@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 18:18:41 by hyna              #+#    #+#             */
-/*   Updated: 2022/12/27 11:47:31 by hyna             ###   ########.fr       */
+/*   Created: 2022/12/27 11:50:51 by hyna              #+#    #+#             */
+/*   Updated: 2022/12/27 11:50:55 by hyna             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
+char	**ft_free_split(char **mem)
+{
+	int		idx;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-char	*free_str(char	*s);
-
-#endif
+	idx = 0;
+	if (mem == NULL)
+		return (NULL);
+	while (mem[idx])
+		free(mem[idx++]);
+	free(mem);
+	return (NULL);
+}
